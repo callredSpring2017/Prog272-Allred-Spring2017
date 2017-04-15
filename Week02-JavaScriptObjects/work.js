@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 function divider(title) {
     console.log("====================================");
     console.log(title);
