@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import logo from './images/logo.svg';
+import './css/App.css';
+import ElfHeader from './components/elfheader'
 
-class App extends Component {
+class Address extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,13 +20,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h2>Welcome to Prog 272</h2>
-                </div>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
+                <ElfHeader/>
                 <p className="App-intro">Nine: {this.state.nine}</p>
                 <p className="App-intro">firstName: {this.state.firstName}</p>
                 <p className="App-intro">lastName: {this.state.lastName}</p>
@@ -33,8 +28,8 @@ class App extends Component {
                 <p className="App-intro">city: {this.state.city}</p>
                 <p className="App-intro">state: {this.state.state}</p>
                 <p className="App-intro">zipCode: {this.state.zipCode}</p>
-                <button className='elf' onClick={this.getNine}>Get Nine</button>
-                <button className='orc' onClick={this.setAddress}>Set Address</button>
+                <button className='elf' id='nine' onClick={this.getNine}>Get Nine</button>
+                <button className='elf' id='address' onClick={this.setAddress}>Set Address</button>
             </div>
         );
     }
@@ -56,4 +51,4 @@ class App extends Component {
     };
 }
 
-export default App;
+export default Address;
