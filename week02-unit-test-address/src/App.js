@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './css/App.css';
-import ElfHeader from './components/elfheader'
+import ElfHeader from './components/elfheader';
 
 class Address extends Component {
     constructor() {
@@ -34,7 +34,7 @@ class Address extends Component {
     }
 
     getNine = () => {
-        console.log('state');
+        console.log('NINE');
         this.setState({nine: '9'})
     };
 
