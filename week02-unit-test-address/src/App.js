@@ -5,14 +5,15 @@ import ElfHeader from './components/elfheader.js';
 class Address extends Component {
     constructor() {
         super();
+        const unknown = 'unknown';
         this.state = {
             nine: '0',
-            firstName: 'unknown',
-            lastName: 'unknown',
-            streetAddress: 'unknown',
-            city: 'unknown',
-            state: 'unknown',
-            zipCode: 'unknown'
+            firstName: unknown,
+            lastName: unknown,
+            streetAddress: unknown,
+            city: unknown,
+            state: unknown,
+            zipCode: unknown
         }
     }
 
