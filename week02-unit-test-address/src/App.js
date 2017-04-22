@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './css/App.css';
 import ElfHeader from './components/elfheader.js';
+import Address from './components/Address'
+import './css/index.css';
 
 class Address extends Component {
     constructor() {
@@ -20,6 +22,7 @@ class Address extends Component {
     render() {
         return (
             <div className="App">
+                <Address/>
                 <ElfHeader/>
                 <p className="App-intro">Nine: {this.state.nine}</p>
                 <p className="App-intro">firstName: {this.state.firstName}</p>
