@@ -20,7 +20,6 @@ class Address extends Component {
     }
 
     render() {
-            <div>
         return (
             <div className="App">
                 <p className="App-intro">firstName: {this.state.firstName}</p>
