@@ -1,10 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Address from './App';
+// TODO: import address
+import Address from './components/address';
+// TODO: Import App also
+import App from './App';
 import ElfHeader from './components/elfheader'
 import {shallow} from 'enzyme';
 
 describe('My React Jest Suite', function () {
+
+    // TODO add debug code
+    var quiet = false;
+
+    function getFirst(wrapper) {
+        const eightp = wrapper.find('p').first().debug();
+        if (!quiet) {
+            console.log("APP TEST:", eightp);
+        }
+    }
+
+    function getLast(wrapper) {
+        const eightp = wrapper.find('p').debug();
+        if (!quiet) {
+            console.log("APP TEST:", eightp);
+        }
+    }
 
     it('renders without our Address component without crashing', () => {
         const div = document.createElement('div');
@@ -18,14 +38,16 @@ describe('My React Jest Suite', function () {
     });
 
     it('renders and displays the word Nine', () => {
-        const wrapper = shallow(<Address />);
+        // TODO: Access the App component not Address
+        const wrapper = shallow(<App />);
         console.log(wrapper);
         const welcome = <p className="App-intro">Nine: 0</p>;
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 
     it('renders button Nine click message', () => {
-        const wrapper = shallow(<Address />);
+        // TODO: Access the App component not Address
+        const wrapper = shallow(<App />);
         const nineSign = <p className="App-intro">Nine: 9</p>;
         wrapper.find('button#nine').simulate('click');
         expect(wrapper.contains(nineSign)).toEqual(true);
@@ -35,7 +57,7 @@ describe('My React Jest Suite', function () {
         const wrapper = shallow(<Address />);
         const welcome = <p className="App-intro">firstName: unknown</p>;
         const firstName = wrapper.find('p').last().debug();
-        console.log(firstName);
+        getLast(wrapper);
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 
