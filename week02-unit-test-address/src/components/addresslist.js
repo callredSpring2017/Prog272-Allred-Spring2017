@@ -6,18 +6,22 @@ const addresses = [
     {
         firstName: unknown,
         lastName: unknown,
-        street: unknown,
+        streetAddress: unknown,
         city: unknown,
-        state: unknown,
-        zip: unknown
+        State: unknown,
+        zipCode: unknown,
+        phone: unknown,
+        website: unknown
     },
     {
         firstName: 'Patty',
         lastName: 'Murray',
-        street: unknown,
+        streetAddress: '915 2nd Ave #2988',
         city: 'Seattle',
-        state: 'WA',
-        zip: unknown
+        State: 'Washington',
+        zipCode: '98174',
+        phone: unknown,
+        website: unknown
     }
 
 ];

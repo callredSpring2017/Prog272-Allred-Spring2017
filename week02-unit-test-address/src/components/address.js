@@ -8,14 +8,15 @@ import addresses from './addresslist';
 class Address extends Component {
     constructor() {
         super();
-        const unknown = 'unknown';
+
+        const AddressList = addresses[0];
         this.state = {
-            firstName: unknown,
-            lastName: unknown,
-            streetAddress: unknown,
-            city: unknown,
-            State: unknown,
-            zipCode: unknown
+            firstName: AddressList.firstName,
+            lastName: AddressList.lastName,
+            streetAddress: AddressList.streetAddress,
+            city: AddressList.city,
+            State: AddressList.State,
+            zipCode: AddressList.zipCode
         }
     }
 
@@ -34,13 +35,14 @@ class Address extends Component {
     }
 
     setAddress = () => {
+        const AddressList = addresses[1];
         this.setState({
-            firstName: 'Patty',
-            lastName: 'Murray',
-            streetAddress: '915 2nd Ave #2988',
-            city: 'Seattle',
-            State: 'Washington',
-            zipCode: '98174'
+            firstName: AddressList.firstName,
+            lastName: AddressList.lastName,
+            streetAddress: AddressList.streetAddress,
+            city: AddressList.city,
+            State: AddressList.State,
+            zipCode: AddressList.zipCode
         })
     };
 }

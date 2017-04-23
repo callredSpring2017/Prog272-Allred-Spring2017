@@ -13,22 +13,22 @@ class App extends Component {
 
         }
     }
-        render() {
-            return (
-                <div className="App">
-                    <ElfHeader/>
-                    <p className="App-intro">Nine: {this.state.nine}</p>
-                    <Address/>
-                    <button className='elf' id='nine' onClick={this.getNine}>Get Nine</button>
-                </div>
-            );
-        }
-
-        getNine = () => {
-            this.setState({nine: '9'})
-        };
-
+    render() {
+        return (
+            <div className="App">
+                <ElfHeader/>
+                <p className="App-intro">Nine: {this.state.nine}</p>
+                <Address/>
+                <button className='elf' id='nine' onClick={this.getNine}>Get Nine</button>
+            </div>
+        );
     }
+
+    getNine = () => {
+        this.setState({nine: '9'})
+    };
+
+}
 
 
 export default App;
