@@ -17,6 +17,21 @@ class Address extends Component {
         }
     }
 
+    getNine = () => {
+        this.setState({nine: '9'})
+    };
+
+    setAddress = () => {
+        this.setState({
+            firstName: 'Patty',
+            lastName: 'Murray',
+            streetAddress: '915 2nd Ave #2988',
+            city: 'Seattle',
+            state: 'Washington',
+            zipCode: '98174'
+        })
+    };
+
     render() {
         return (
             <div className="App">
@@ -34,20 +49,6 @@ class Address extends Component {
         );
     }
 
-    getNine = () => {
-        this.setState({nine: '9'})
-    };
-
-    setAddress = () => {
-        this.setState({
-            firstName: 'Patty',
-            lastName: 'Murray',
-            streetAddress: '915 2nd Ave #2988',
-            city: 'Seattle',
-            state: 'Washington',
-            zipCode: '98174'
-        })
-    };
 }
 
 export default Address;
