@@ -13,6 +13,11 @@ class App extends Component {
 
         }
     }
+
+    getNine = () => {
+        this.setState({nine: '9'})
+    };
+
     render() {
         return (
             <div className="App">
@@ -23,11 +28,6 @@ class App extends Component {
             </div>
         );
     }
-
-    getNine = () => {
-        this.setState({nine: '9'})
-    };
-
 }
 
 

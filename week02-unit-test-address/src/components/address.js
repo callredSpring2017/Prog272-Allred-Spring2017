@@ -20,6 +20,18 @@ class Address extends Component {
         }
     }
 
+    setAddress = () => {
+        const AddressList = addresses[1];
+        this.setState({
+            firstName: AddressList.firstName,
+            lastName: AddressList.lastName,
+            streetAddress: AddressList.streetAddress,
+            city: AddressList.city,
+            State: AddressList.State,
+            zipCode: AddressList.zipCode
+        })
+    };
+
     render() {
         return (
             <div className="App">
@@ -33,18 +45,6 @@ class Address extends Component {
             </div>
         );
     }
-
-    setAddress = () => {
-        const AddressList = addresses[1];
-        this.setState({
-            firstName: AddressList.firstName,
-            lastName: AddressList.lastName,
-            streetAddress: AddressList.streetAddress,
-            city: AddressList.city,
-            State: AddressList.State,
-            zipCode: AddressList.zipCode
-        })
-    };
 }
 
 
