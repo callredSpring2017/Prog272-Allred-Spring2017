@@ -14,10 +14,10 @@ const addresses = [
     {
         firstName: 'Patty',
         lastName: 'Murray',
-        streetAddress: '',
+        streetAddress: '915 2nd Ave #2988',
         city: 'Seattle',
         state: 'WA',
-        zipCode: ''
+        zipCode: '98174'
     }
 ];
 
