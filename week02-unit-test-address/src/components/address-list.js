@@ -6,20 +6,19 @@ const addresses = [
     {
         firstName: unknown,
         lastName: unknown,
-        street: unknown,
+        streetAddress: unknown,
         city: unknown,
         state: unknown,
-        zip: unknown
+        zipCode: unknown
     },
     {
         firstName: 'Patty',
         lastName: 'Murray',
-        street: unknown,
+        streetAddress: '',
         city: 'Seattle',
         state: 'WA',
-        zip: unknown
+        zipCode: ''
     }
-
 ];
 
 export default addresses;
