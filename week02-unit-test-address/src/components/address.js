@@ -3,13 +3,13 @@
  */
 import React, {Component} from 'react';
 
-import addresses from './addresslist';
+import Addresses from './addresslist';
 
 class Address extends Component {
     constructor() {
         super();
 
-        const AddressList = addresses[0];
+        const AddressList = Addresses[0];
         this.state = {
             firstName: AddressList.firstName,
             lastName: AddressList.lastName,
@@ -21,7 +21,7 @@ class Address extends Component {
     }
 
     setAddress = () => {
-        const AddressList = addresses[1];
+        const AddressList = Addresses[1];
         this.setState({
             firstName: AddressList.firstName,
             lastName: AddressList.lastName,
