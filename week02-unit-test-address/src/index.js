@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
+import App from './App';
 import './css/index.css';
-import Address from './components/address';
-//import ElfHeader from "./components/elfheader";
-//import Address from "./components/address"
-import ElfHeader from './components/elfheader.js';
+import ElfHeader from "./components/elfheader";
+import Address from "./components/address"
 
 ReactDOM.render(
     <div>
         <ElfHeader/>
+        <App />
         <Address />
     </div>,
     document.getElementById('root')
-)
-;
+);
