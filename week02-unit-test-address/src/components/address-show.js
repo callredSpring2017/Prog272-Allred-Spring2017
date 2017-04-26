@@ -5,13 +5,26 @@ import React, {Component} from 'react';
 import '../css/App.css';
 
 
+//could get rid of this, but left it to show it's there behind the scenes
 class AddressShow extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props.address);
+        this.quiet = true;
+        this.log(this.props.address);
         // this.state = {
         //     address: this.props.address
         // }
+        this.log(props);
+    }
+
+    log(message, message2='', message3=''){
+
+        if(!this.quiet){
+
+            const label = this.constructor.name + ': ';
+            console.log(label, message, message2, message3)
+        }
+
     }
 
 
@@ -22,6 +35,7 @@ class AddressShow extends Component {
     };
 
     render() {
+        this.log('render called');
         return (
             <div className="App">
                 <p className="App-intro">firstName: {this.props.address.firstName}</p>

@@ -6,7 +6,14 @@ import React from 'react';
 import Address from '../App';
 import {shallow} from 'enzyme';
 
-describe('Address Tests', function () {
+describe('Address-Show Suite', function () {
+
+    let address = {};
+
+    beforeEach(function () {
+        address = address[0];
+
+    });
 
     it('renders and displays the default first name', () => {
         const wrapper = shallow(<Address />);
@@ -16,7 +23,7 @@ describe('Address Tests', function () {
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 
-    it('renders button Set Address click message: firstName', () => {
+    it.only('renders button Set Address click message: firstName', () => {
         const wrapper = shallow(<Address />);
         const AddressSign = <p className="App-intro">firstName: Patty</p>;
         wrapper.find('button#address').simulate('click');

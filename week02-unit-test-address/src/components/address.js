@@ -9,7 +9,7 @@ import AddressShow from './address-show';
 class Address extends Component {
     constructor() {
         super();
-        const index = 0;
+        this.addressindex = 0;
         this.state = {
             // firstName: this.props.address[index].firstName,
             // lastName: this.props.address[index].lastName,
@@ -17,12 +17,12 @@ class Address extends Component {
             // city: this.props.address[index].city,
             // state: this.props.address[index].state,
             // zipCode: this.props.address[index].zipCode
-            address: Addresses[index]
+            address: Addresses[this.addressindex ]
         }
     }
 
 
-    setAddress = () => {
+/*    setAddress = () => {
         this.setState({
             firstName: 'Patty',
             lastName: 'Murray',
@@ -31,13 +31,12 @@ class Address extends Component {
             state: 'Washington',
             zipCode: '98174'
         })
-    };
+    };*/
 
     render() {
         console.log("ADDRESS", this.state.address);
         return (
             <div className="App">
-                <p>Hello</p>
                 <AddressShow address={this.state.address} />
             </div>
         );
