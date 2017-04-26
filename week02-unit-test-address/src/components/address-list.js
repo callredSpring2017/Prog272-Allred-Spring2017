@@ -2,7 +2,7 @@
  * Created by bcuser on 4/24/17.
  */
 const unknown = 'unknown';
-const addresses = [
+const Addresses = [
     {
         firstName: unknown,
         lastName: unknown,
@@ -21,4 +21,4 @@ const addresses = [
     }
 ];
 
-export default addresses;
+export default Addresses;

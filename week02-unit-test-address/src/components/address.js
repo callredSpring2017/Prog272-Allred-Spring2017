@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import '../css/App.css';
-import addresses from './address-list';
+import Addresses from './address-list';
 import AddressShow from './address-show';
 
 class Address extends Component {
@@ -17,7 +17,7 @@ class Address extends Component {
             // city: this.props.address[index].city,
             // state: this.props.address[index].state,
             // zipCode: this.props.address[index].zipCode
-            address: addresses[index]
+            address: Addresses[index]
         }
     }
 
