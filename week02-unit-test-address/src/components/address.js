@@ -22,22 +22,27 @@ class Address extends Component {
     }
 
 
-/*    setAddress = () => {
+    setAddress = () => {
+        this.addressindex = 1;
         this.setState({
-            firstName: 'Patty',
+/*            firstName: 'Patty',
             lastName: 'Murray',
             streetAddress: '915 2nd Ave #2988',
             city: 'Seattle',
             state: 'Washington',
-            zipCode: '98174'
+            zipCode: '98174'*/
+            address: Addresses[this.addressindex]
         })
-    };*/
+    };
 
     render() {
         console.log("ADDRESS", this.state.address);
         return (
             <div className="App">
-                <AddressShow address={this.state.address} />
+                <AddressShow
+                    address={this.state.address}
+                    setAddress={this.setAddress}
+                />
             </div>
         );
     }

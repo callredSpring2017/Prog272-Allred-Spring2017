@@ -37,14 +37,14 @@ class AddressShow extends Component {
     render() {
         this.log('render called');
         return (
-            <div className="App">
+            <div className="addressShowRender">
                 <p className="App-intro">firstName: {this.props.address.firstName}</p>
                 <p className="App-intro">lastName: {this.props.address.lastName}</p>
                 <p className="App-intro">streetAddress: {this.props.address.streetAddress}</p>
                 <p className="App-intro">city: {this.props.address.city}</p>
                 <p className="App-intro">state: {this.props.address.state}</p>
                 <p className="App-intro">zipCode: {this.props.address.zipCode}</p>
-                <button className='elf' id='address' onClick={this.setAddress}>Set Address</button>
+                <button className='elf' id='getAddress' onClick={this.props.setAddress}>Set Address</button>
             </div>
         );
     }

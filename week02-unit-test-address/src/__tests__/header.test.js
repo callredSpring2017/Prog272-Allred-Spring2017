@@ -4,7 +4,7 @@ import Address from '../App';
 import ElfHeader from '../components/elfheader'
 import {shallow} from 'enzyme';
 
-describe('My React Jest Suite', function () {
+describe('Header Suite', function () {
 
     it('renders without our Address component without crashing', () => {
         const div = document.createElement('div');
@@ -30,7 +30,4 @@ describe('My React Jest Suite', function () {
         wrapper.find('button#nine').simulate('click');
         expect(wrapper.contains(nineSign)).toEqual(true);
     });
-
-
-
 });

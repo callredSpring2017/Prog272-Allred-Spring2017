@@ -16,7 +16,7 @@ const Addresses = [
         lastName: 'Murray',
         streetAddress: '915 2nd Ave #2988',
         city: 'Seattle',
-        state: 'WA',
+        state: 'Washington',
         zipCode: '98174'
     }
 ];
