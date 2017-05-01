@@ -2,63 +2,80 @@
  * Created by bcuser on 4/24/17.
  */
 import React from 'react';
-import {shallow} from 'enzyme';
-import AddressShow from "../components/address-show";
+import {mount} from 'enzyme';
+import Address from "../components/address";
 
 describe('Address-Show Test Suite', function () {
+    var quiet = false;
 
-    let address = {};
-    let quiet = true;
-
-    beforeEach(function () {
-        address = address[0];
-    });
-
-    const getLast = (wrapper) => {
-        const ninep = wrapper.find('p').last().debug();
-        console.log(ninep);
-    };
-
-    const getFirst = (wrapper) => {
+    function getFirst(wrapper) {
         const ninep = wrapper.find('p').first().debug();
-        console.log(ninep);
-    };
+        if (!quiet) {
+            console.log("APP TEST:", ninep);
+        }
+    }
+
+    function getLast(wrapper) {
+        const ninep = wrapper.find('p').debug();
+        if (!quiet) {
+            console.log("APP TEST:", ninep);
+        }
+    }
+/*
+ const getIndex = function(wrapper, index, talkToMe) {
+ if (!quiet || talkToMe) {
+ const ninep = wrapper.find('div#addressShowRender').childAt(index).debug();
+ console.log('NINEP:', ninep);
+ }
+
+ };*/
 
     it('renders and displays the default first name', () => {
-        const wrapper = shallow(<AddressShow />);
+        const wrapper = mount(<Address />);
         const welcome = <p className="App-intro">firstName: unknown</p>;
-        // const firstName = wrapper.find('p').last().debug();
-        // console.log(firstName);
+        //const lastfirstName = wrapper.find('p').last().debug();
+        getLast(wrapper);
         expect(wrapper.contains(welcome)).toEqual(true);
+
     });
-    it('renders and displays the default first name', () => {
-        const wrapper = shallow(<AddressShow />);
-        const welcome = <p className="App-intro">firstName: unknown</p>;
-        expect(wrapper.contains(welcome)).toEqual(true);
-    });
+
     it('renders and displays the default last name', () => {
-        const wrapper = shallow(<AddressShow />);
+        const wrapper = mount(<Address />);
         const welcome = <p className="App-intro">lastName: unknown</p>;
+        //const lastfirstName = wrapper.find('p').last().debug();
+        getLast(wrapper);
         expect(wrapper.contains(welcome)).toEqual(true);
+
     });
-    it('renders and displays the default streetAddress', () => {
-        const wrapper = shallow(<AddressShow />);
+    it('renders and displays the default address', () => {
+        const wrapper = mount(<Address />);
         const welcome = <p className="App-intro">streetAddress: unknown</p>;
+        //const streetAddress = wrapper.find('p').last().debug();
+        getLast(wrapper);
         expect(wrapper.contains(welcome)).toEqual(true);
+
     });
     it('renders and displays the default city', () => {
-        const wrapper = shallow(<AddressShow />);
+        const wrapper = mount(<Address />);
         const welcome = <p className="App-intro">city: unknown</p>;
+       // const city = wrapper.find('p').last().debug();
+        getLast(wrapper);
         expect(wrapper.contains(welcome)).toEqual(true);
+
     });
     it('renders and displays the default state', () => {
-        const wrapper = shallow(<AddressShow />);
-        const welcome = <p className="App-intro">State: unknown</p>;
+        const wrapper = mount(<Address />);
+        const welcome = <p className="App-intro">state: unknown</p>;
+       //const state = wrapper.find('p').last().debug();
+        getLast(wrapper);
         expect(wrapper.contains(welcome)).toEqual(true);
+
     });
     it('renders and displays the default zipCode', () => {
-        const wrapper = shallow(<AddressShow />);
+        const wrapper = mount(<Address />);
         const welcome = <p className="App-intro">zipCode: unknown</p>;
+        //const zip = wrapper.find('p').last().debug();
+        getLast(wrapper);
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 });
