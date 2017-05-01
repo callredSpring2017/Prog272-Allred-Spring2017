@@ -25,12 +25,12 @@ class Address extends Component {
     setAddress = () => {
         this.addressindex = 1;
         this.setState({
-/*            firstName: 'Patty',
-            lastName: 'Murray',
-            streetAddress: '915 2nd Ave #2988',
-            city: 'Seattle',
-            state: 'Washington',
-            zipCode: '98174'*/
+            /*            firstName: 'Patty',
+             lastName: 'Murray',
+             streetAddress: '915 2nd Ave #2988',
+             city: 'Seattle',
+             state: 'Washington',
+             zipCode: '98174'*/
             address: Addresses[this.addressindex]
         })
     };
