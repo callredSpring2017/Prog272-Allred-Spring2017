@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
 import AddressShow from './address-show';
-//import AddressEdit from './AddressEdit';
+import AddressEdit from './AddressEdit';
 
 class Address extends Component {
     constructor() {
@@ -26,12 +26,6 @@ class Address extends Component {
     setAddress = () => {
         this.addressindex = 1;
         this.setState({
-            /*            firstName: 'Patty',
-             lastName: 'Murray',
-             streetAddress: '915 2nd Ave #2988',
-             city: 'Seattle',
-             state: 'Washington',
-             zipCode: '98174'*/
             address: Addresses[this.addressindex]
         })
     };
@@ -74,6 +68,11 @@ class Address extends Component {
                     address={this.state.address}
                     setAddress={this.setAddress}
                 />
+                <AddressEdit
+                    address={this.state.address}
+                    setAddress={this.setAddress}
+                />
+
             </div>
         );
     }

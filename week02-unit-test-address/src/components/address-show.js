@@ -5,12 +5,13 @@ import React, {Component} from 'react';
 import '../css/App.css';
 
 
-//could get rid of this, but left it to show it's there behind the scenes
+
 class AddressShow extends Component {
     constructor(props) {
         super(props);
         this.quiet = true;
         this.log(this.props.address);
+        //could get rid of this, but left it to show it's there behind the scenes
         // this.state = {
         //     address: this.props.address
         // }
