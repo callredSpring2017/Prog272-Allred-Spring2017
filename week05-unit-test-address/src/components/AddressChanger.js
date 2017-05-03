@@ -1,41 +1,17 @@
 /**
+ * Created by bcuser on 5/1/17.
+ */
+/**
  * Created by bcuser on 4/24/17.
  */
+//eslint-disable-next-line
 import React, {Component} from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
-import AddressShow from './address-show';
-//import AddressEdit from './AddressEdit';
+import AddressEdit from './AddressEdit';
+import Address from './address';
 
-class Address extends Component {
-    constructor() {
-        super();
-        this.addressindex = 0;
-        this.state = {
-            // firstName: this.props.address[index].firstName,
-            // lastName: this.props.address[index].lastName,
-            // streetAddress: this.props.address[index].streetAddress,
-            // city: this.props.address[index].city,
-            // state: this.props.address[index].state,
-            // zipCode: this.props.address[index].zipCode
-            address: Addresses[this.addressindex ]
-        }
-    }
-
-
-    setAddress = () => {
-        this.addressindex = 1;
-        this.setState({
-            /*            firstName: 'Patty',
-             lastName: 'Murray',
-             streetAddress: '915 2nd Ave #2988',
-             city: 'Seattle',
-             state: 'Washington',
-             zipCode: '98174'*/
-            address: Addresses[this.addressindex]
-        })
-    };
-
+class AddressChanger extends Address {
 
     onNameChange = (event) => {
         const address = Addresses[this.addressindex];
@@ -70,9 +46,10 @@ class Address extends Component {
         console.log("ADDRESS", this.state.address);
         return (
             <div className="App">
-                <AddressShow
+                <AddressEdit
                     address={this.state.address}
                     setAddress={this.setAddress}
+                    onNameChange={this.onNameChange}
                 />
             </div>
         );
@@ -80,4 +57,4 @@ class Address extends Component {
 
 }
 
-export default Address;
+export default AddressChanger;
