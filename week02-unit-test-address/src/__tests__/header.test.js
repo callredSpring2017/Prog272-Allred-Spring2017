@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Address from '../App';
+import Address from '../components/SmallNumbers';
 import ElfHeader from '../components/elfheader'
 import {shallow} from 'enzyme';
 
