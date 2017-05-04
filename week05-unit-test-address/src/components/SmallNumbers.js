@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import '../css/App.css';
-//import ElfHeader from './components/elfheader.js';
-// import Address from './components/address';
 
 class App extends Component {
     constructor() {
