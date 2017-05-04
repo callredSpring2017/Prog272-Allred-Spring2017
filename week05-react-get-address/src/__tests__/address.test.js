@@ -6,9 +6,7 @@ import {mount} from 'enzyme';
 import Address from '../components/address';
 import Addresses from '../components/address-list';
 import '../css/index.css';
-import ElfTestDebug from '../elftestdebug';
 
-const ElfTestDebugger = new ElfTestDebug(false);
 const address = Addresses[0];
 
 describe('Address Test Suite', function () {

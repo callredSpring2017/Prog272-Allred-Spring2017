@@ -2,8 +2,10 @@
  * Created by bcuser on 5/1/17.
  */
 import React, {Component} from 'react';
-import AddressChanger from './AddressChanger';
+//import AddressShow from './address-show'
+import AddressEdit from './AddressEdit'
 import Address from './address';
+//import AddressChanger from './AddressChanger';
 import SmallNumbers from './SmallNumbers';
 import {
     BrowserRouter as Router,
@@ -27,7 +29,7 @@ class ElfMenu extends Component {
                     </div>
                 </div>
                 <Route exact path="/" component={Address}/>
-                <Route path="/edit" component={AddressChanger}/>
+                <Route path="/edit" component={AddressEdit}/>
                 <Route path="/small" component={SmallNumbers}/>
             </Router>
         );

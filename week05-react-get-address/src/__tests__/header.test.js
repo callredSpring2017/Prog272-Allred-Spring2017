@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Address from '../components/SmallNumbers';
+import Address from '../App';
 import ElfHeader from '../components/elfheader'
 import {shallow} from 'enzyme';
-import ElfTestDebug from '../elftestdebug';
-
-const ElfTestDebugger = new ElfTestDebug(false);
 
 describe('Header Suite', function () {
 
