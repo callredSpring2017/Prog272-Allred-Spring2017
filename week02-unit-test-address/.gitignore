@@ -15,4 +15,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+node_modules
+.metadata
+.idea
+bower_components
+Thumbs.db
+*.zip
+npm-debug.log
