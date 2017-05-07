@@ -63,4 +63,10 @@ describe('Address Test Suite', function () {
         expect(wrapper.contains(AddressSign)).toEqual(true);
     });
 
+    it('renders button Set Address click message: website', () => {
+        const wrapper = mount(<Address />);
+        const AddressSign = <p className="App-intro">website: https://www.murray.senate.gov/public/</p>;
+        wrapper.find('button#setAddress').simulate('click');
+        expect(wrapper.contains(AddressSign)).toEqual(true);
+    });
 });

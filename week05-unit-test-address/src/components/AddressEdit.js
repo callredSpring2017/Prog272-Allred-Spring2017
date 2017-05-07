@@ -37,6 +37,10 @@ class AddressEdit extends Component {
                        className="App-intro"
                        value={this.props.address.zipCode}
                        onChange={this.props.onNameChange} />
+                <input id="elfWebsite"
+                       className="App-intro"
+                       value={this.props.address.website}
+                       onChange={this.props.onNameChange} />
                 <button className='elf' id='setAddress' onClick={this.props.setAddress}>Set Address</button>
             </div>
         );

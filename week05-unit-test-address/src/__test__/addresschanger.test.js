@@ -65,4 +65,9 @@ describe('Address Test Changer Suite', function () {
         ElfTestDebugger.getLast(wrapper, 'input');
         expect(wrapper.containsMatchingElement(welcome)).toEqual(true);
     });
-});
+    it('renders and displays the default website', () => {
+        const wrapper = mount(<AddressChanger />);
+        const welcome = <input id="elfWebsite" className="App-intro" value="unknown" />;
+        ElfTestDebugger.getLast(wrapper, 'input');
+        expect(wrapper.containsMatchingElement(welcome)).toEqual(true);
+    });});

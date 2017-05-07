@@ -63,6 +63,9 @@ class Address extends Component {
             case 'elfZipCode':
                 address.zipCode = event.target.value;
                 break;
+            case 'elfWebsite':
+                address.website = event.target.value;
+                break;
             default:
                 throw new Error('OH NO BAD CASE in Address onNameChange');
         }

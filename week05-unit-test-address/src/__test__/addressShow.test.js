@@ -74,4 +74,9 @@ describe('Address-Show Test Suite', function () {
         ElfTestDebugger.getLast(wrapper, 'p');
         expect(wrapper.contains(welcome)).toEqual(true);
     });
-});
+    it('renders and displays the default zipCode', () => {
+        const wrapper = mount(<Address />);
+        const welcome = <p className="App-intro">website: unknown</p>;
+        ElfTestDebugger.getLast(wrapper, 'p');
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });});
