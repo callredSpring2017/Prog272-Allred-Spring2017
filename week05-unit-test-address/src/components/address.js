@@ -24,7 +24,12 @@ class Address extends Component {
 
 
     setAddress = () => {
-        this.addressindex = 1;
+        this.addressindex++;
+        if (this.addressindex > this.addressindex.length -1)
+        {
+
+            this.addressindex = this.addressindex.length -1;
+        };
         this.setState({
             /*            firstName: 'Patty',
              lastName: 'Murray',

@@ -25,7 +25,6 @@ describe('Address Test Changer Suite', function () {
 
     it('renders and displays the default first name', () => {
         const wrapper = mount(<AddressChanger />);
-        //ElfTestDebugger.getFirst(wrapper, "div")
         const welcome = <input id="elfFirstName" className="App-intro" value="unknown"/>;
         ElfTestDebugger.getLast(wrapper, 'input');
         expect(wrapper.containsMatchingElement(welcome)).toEqual(true);
