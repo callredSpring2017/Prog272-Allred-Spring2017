@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "week02-unit-test-address",
+=======
+  "name": "week05-unit-test-address",
+>>>>>>> 006390bdca5a41ed8561ac8d5c51392b17a55bd3
   "version": "0.1.0",
   "private": true,
   "dependencies": {

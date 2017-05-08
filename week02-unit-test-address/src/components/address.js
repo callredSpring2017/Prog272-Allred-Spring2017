@@ -5,7 +5,10 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
 import AddressShow from './address-show';
+<<<<<<< HEAD
 import AddressEdit from './AddressEdit';
+=======
+>>>>>>> 006390bdca5a41ed8561ac8d5c51392b17a55bd3
 
 class Address extends Component {
     constructor() {
@@ -26,10 +29,20 @@ class Address extends Component {
     setAddress = () => {
         this.addressindex = 1;
         this.setState({
+<<<<<<< HEAD
+=======
+            /*            firstName: 'Patty',
+             lastName: 'Murray',
+             streetAddress: '915 2nd Ave #2988',
+             city: 'Seattle',
+             state: 'Washington',
+             zipCode: '98174'*/
+>>>>>>> 006390bdca5a41ed8561ac8d5c51392b17a55bd3
             address: Addresses[this.addressindex]
         })
     };
 
+<<<<<<< HEAD
 
     onNameChange = (event) => {
         const address = Addresses[this.addressindex];
@@ -60,6 +73,8 @@ class Address extends Component {
         })
     };
 
+=======
+>>>>>>> 006390bdca5a41ed8561ac8d5c51392b17a55bd3
     render() {
         console.log("ADDRESS", this.state.address);
         return (

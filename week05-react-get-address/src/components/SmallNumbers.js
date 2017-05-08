@@ -3,6 +3,11 @@ import '../css/App.css';
 //import ElfHeader from './components/elfheader.js';
 // import Address from './components/address';
 
+import './css/index.css';
+import ElfHeader from './components/elfheader';
+import Address from './components/address';
+
+
 class App extends Component {
     constructor() {
         super();
@@ -19,11 +24,13 @@ class App extends Component {
         return (
             <div className="App">
                 <p className="App-intro">Nine: {this.state.nine}</p>
+                <Address/>
                 <button className='elf' id='nine' onClick={this.getNine}>Get Nine</button>
             </div>
         );
     }
 
 }
+
 
 export default App;
