@@ -1,0 +1,9 @@
+var foo = {
+    a: 1,
+    b: 2,
+    c: 'this'
+};
+
+const bar = JSON.stringify(foo, null, 4);
+
+var foo2 = JSON.parse(bar);
