@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
 import AddressShow from './address-show';
-//import AddressEdit from './AddressEdit';
+import logger from '../elf-logger';
+import 'whatwg-fetch';
 import {
     saveToLocalStorage,
+    // eslint-disable-next-line
     clearLocalStorage,
+    // eslint-disable-next-line
     getLocalStorage
 } from '../assets/elf-local-storage'
 
@@ -13,6 +16,7 @@ class Address extends Component {
     constructor() {
         super();
         this.addressindex = 0;
+        this.loadAddresses();
         this.state = {
 
             address: Addresses[this.addressindex ]
@@ -33,6 +37,24 @@ class Address extends Component {
         })
     };
 
+    loadAddresses = () => {
+        const that = this;
+        fetch('./addresses.json').then(function(data) {
+            const addresses = data.json();
+            console.log(addresses);
+            return addresses;
+        }).then(function (data) {
+            data.forEach(function(address, index){
+                console.log(address.lastName);
+                localStorage.setItem('elf' + index, address.lastName);
+            });
+            //console.log(JSON.stringify(data, null, 4));
+            that.addresses = data;
+            //that.setLocalStorage();
+        }).catch(function (err) {
+            logger.log(err);
+        })
+    }
 
     onNameChange = (event) => {
         const address = Addresses[this.addressindex];
@@ -62,6 +84,8 @@ class Address extends Component {
             address: address
         })
     };
+
+
 
     render() {
         console.log("ADDRESS", this.state.address);

@@ -1,15 +1,12 @@
 {
-<<<<<<< HEAD
-  "name": "week02-unit-test-address",
-=======
-  "name": "week05-unit-test-address",
->>>>>>> 006390bdca5a41ed8561ac8d5c51392b17a55bd3
+  "name": "week06-learn-local-storage",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "enzyme": "^2.8.2",
