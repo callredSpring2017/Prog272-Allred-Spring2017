@@ -39,16 +39,12 @@ class Address extends Component {
 
     loadAddresses = () => {
         const that = this;
-        fetch('./addresses.json').then(function(data) {
+        fetch('./address.json').then(function(data) {
             const addresses = data.json();
             console.log(addresses);
             return addresses;
         }).then(function (data) {
-            data.forEach(function(address, index){
-                console.log(address.lastName);
-                localStorage.setItem('elf' + index, address.lastName);
-            });
-            //console.log(JSON.stringify(data, null, 4));
+            console.log(JSON.stringify(data, null, 4));
             that.addresses = data;
             //that.setLocalStorage();
         }).catch(function (err) {
