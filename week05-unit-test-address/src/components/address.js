@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
 import AddressShow from './address-show';
-//import AddressEdit from './AddressEdit';
+
 
 class Address extends Component {
     constructor() {
@@ -25,22 +25,40 @@ class Address extends Component {
 
     setAddress = () => {
         this.addressindex++;
-        if (this.addressindex > this.addressindex.length -1)
+        if (this.addressindex > Addresses.length - 1 )
         {
-
-            this.addressindex = this.addressindex.length -1;
-        };
+            this.addressindex = Addresses.length - 1;
+        }
         this.setState({
-            /*            firstName: 'Patty',
-             lastName: 'Murray',
-             streetAddress: '915 2nd Ave #2988',
-             city: 'Seattle',
-             state: 'Washington',
-             zipCode: '98174'*/
             address: Addresses[this.addressindex]
         })
     };
 
+
+    getAddress = () => {
+        this.addressindex--;
+        if (this.addressindex < 0)
+        {
+            this.addressindex = 0;
+        }
+        this.setState({
+            address: Addresses[this.addressindex]
+        })
+    };
+
+    setLastAddress = () =>{
+        this.addressindex = Addresses.length - 1;
+        this.setState({
+            address: Addresses[this.addressindex]
+        })
+    };
+
+    getFirstAddress = () =>{
+        this.addressindex = 0;
+        this.setState({
+            address: Addresses[this.addressindex]
+        })
+    };
 
     onNameChange = (event) => {
         const address = Addresses[this.addressindex];
@@ -81,6 +99,9 @@ class Address extends Component {
                 <AddressShow
                     address={this.state.address}
                     setAddress={this.setAddress}
+                    getAddress={this.getAddress}
+                    setLastAddress={this.setLastAddress}
+                    getFirstAddress={this.getFirstAddress}
                 />
             </div>
         );

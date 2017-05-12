@@ -18,7 +18,7 @@ class ElfMenu extends Component {
         return (
             <Router>
                 <div>
-                    <div className="App">
+                    <div className="App" id="elfmenu">
                         <ul>
                             <li><Link to="/">AddressShow</Link></li>
                             <li><Link to="/edit">AddressEdit</Link></li>

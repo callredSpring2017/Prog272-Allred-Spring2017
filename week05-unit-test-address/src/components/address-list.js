@@ -32,7 +32,7 @@ const Addresses = [
     },
     {
         firstName: 'Suzan',
-        lastName: 'Del',
+        lastName: 'DelBene',
         streetAddress: 'Canyon Park Business Center, 22121 17th Ave SE, Bldg E Suite 220',
         city: 'Bothell',
         state: 'Washington',

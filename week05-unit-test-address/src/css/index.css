@@ -2,4 +2,37 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: orange;
+}
+
+#elfmenu{
+
+  background-color: darkorange/*rgb(255,113,0)*/;
+}
+ul{
+
+  min-width: 696px;
+  list-style: none;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+li{
+
+  display: inline;
+  margin: 40px;
+}
+
+input{
+
+  display: block;
+  left: 45%;
+  margin: 10px auto;
+}
+
+button{
+
+    marging: 10px;
+    padding: 5px;
+    background-color: darkorange;
 }

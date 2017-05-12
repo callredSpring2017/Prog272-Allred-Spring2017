@@ -52,6 +52,9 @@ class AddressChanger extends Address {
                 <AddressEdit
                     address={this.state.address}
                     setAddress={this.setAddress}
+                    getAddress={this.getAddress}
+                    setLastAddress={this.setLastAddress}
+                    getFirstAddress={this.getFirstAddress}
                     onNameChange={this.onNameChange}
                 />
             </div>
