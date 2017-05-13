@@ -38,7 +38,6 @@ class AddressChanger extends Address {
     };
 
     render() {
-        console.log('ADDRESS', this.state.address);
         return (
             <div className='App'>
                 <AddressEdit
