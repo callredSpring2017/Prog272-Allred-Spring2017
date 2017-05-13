@@ -1,8 +1,7 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import ElfHeader from "./components/elfheader";
+import ElfHeader from './components/elfheader';
 import ElfMenu from './components/elfmenu';
 
 ReactDOM.render(

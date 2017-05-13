@@ -15,8 +15,8 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <p className="App-intro">Nine: {this.state.nine}</p>
+            <div className='App'>
+                <p className='App-intro'>Nine: {this.state.nine}</p>
                 <button className='elf' id='nine' onClick={this.getNine}>Get Nine</button>
             </div>
         );

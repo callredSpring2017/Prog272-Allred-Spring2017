@@ -1,6 +1,3 @@
-/**
- * Created by bcuser on 4/24/17.
- */
 import React, {Component} from 'react';
 import '../css/App.css';
 
@@ -17,9 +14,9 @@ class AddressShow extends Component {
         this.log(props);
     }
 
-    log(message, message2='', message3=''){
+    log(message, message2 = '', message3 = '') {
 
-        if(!this.quiet){
+        if (!this.quiet) {
 
             const label = this.constructor.name + ': ';
             console.log(label, message, message2, message3)
@@ -29,28 +26,20 @@ class AddressShow extends Component {
 
 
     setAddress = () => {
-        this.setState({
-
-        })
+        this.setState({})
     };
 
     getAddress = () => {
-        this.setState({
-
-        })
+        this.setState({})
     };
 
     getFirstAddress = () => {
-        this.setState({
-
-        })
+        this.setState({})
     };
 
     setLastAddress = () => {
-    this.setState({
-
-    })
-};
+        this.setState({})
+    };
 
     render() {
         this.log('render called');
@@ -63,7 +52,7 @@ class AddressShow extends Component {
                 <p className="App-intro">state: {this.props.address.state}</p>
                 <p className="App-intro">zipCode: {this.props.address.zipCode}</p>
                 <p className="App-intro">website: {this.props.address.website}</p>
-                <button className="elf" id="getFirstAddress"onClick={this.props.getFirstAddress}>First</button>
+                <button className="elf" id="getFirstAddress" onClick={this.props.getFirstAddress}>First</button>
                 <button className='elf' id='getAddress' onClick={this.props.getAddress}>Get Prev</button>
                 <button className='elf' id='setAddress' onClick={this.props.setAddress}>Get Next</button>
                 <button className="elf" id="setLastAddress" onClick={this.props.setLastAddress}>Last</button>

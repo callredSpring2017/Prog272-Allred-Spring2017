@@ -1,6 +1,3 @@
-/**
- * Created by bcuser on 4/24/17.
- */
 import React, {Component} from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
@@ -18,15 +15,14 @@ class Address extends Component {
             // city: this.props.address[index].city,
             // state: this.props.address[index].state,
             // zipCode: this.props.address[index].zipCode
-            address: Addresses[this.addressindex ]
+            address: Addresses[this.addressindex]
         }
     }
 
 
     setAddress = () => {
         this.addressindex++;
-        if (this.addressindex > Addresses.length - 1 )
-        {
+        if (this.addressindex > Addresses.length - 1) {
             this.addressindex = Addresses.length - 1;
         }
         this.setState({
@@ -37,8 +33,7 @@ class Address extends Component {
 
     getAddress = () => {
         this.addressindex--;
-        if (this.addressindex < 0)
-        {
+        if (this.addressindex < 0) {
             this.addressindex = 0;
         }
         this.setState({
@@ -46,14 +41,14 @@ class Address extends Component {
         })
     };
 
-    setLastAddress = () =>{
+    setLastAddress = () => {
         this.addressindex = Addresses.length - 1;
         this.setState({
             address: Addresses[this.addressindex]
         })
     };
 
-    getFirstAddress = () =>{
+    getFirstAddress = () => {
         this.addressindex = 0;
         this.setState({
             address: Addresses[this.addressindex]

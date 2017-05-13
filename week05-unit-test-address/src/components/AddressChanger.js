@@ -1,19 +1,11 @@
-/**
- * Created by bcuser on 5/1/17.
- */
-/**
- * Created by bcuser on 4/24/17.
- */
-//eslint-disable-next-line
-import React, {Component} from 'react';
+import React from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
 import AddressEdit from './AddressEdit';
 import Address from './address';
 
 class AddressChanger extends Address {
-
-    onNameChange = (event) => {
+    onNameChange(event)  {
         const address = Addresses[this.addressindex];
         switch (event.target.id) {
             case 'elfFirstName':
@@ -42,13 +34,13 @@ class AddressChanger extends Address {
         }
         this.setState({
             address: address
-        })
+        });
     };
 
     render() {
-        console.log("ADDRESS", this.state.address);
+        console.log('ADDRESS', this.state.address);
         return (
-            <div className="App">
+            <div className='App'>
                 <AddressEdit
                     address={this.state.address}
                     setAddress={this.setAddress}
