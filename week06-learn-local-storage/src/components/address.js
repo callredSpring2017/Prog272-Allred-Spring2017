@@ -6,6 +6,7 @@ import logger from '../elf-logger';
 import 'whatwg-fetch';
 import {
     saveToLocalStorage,
+    saveToLocalStorageByName,
     // eslint-disable-next-line
     clearLocalStorage,
     // eslint-disable-next-line
@@ -21,7 +22,7 @@ class Address extends Component {
 
             address: Addresses[this.addressindex ]
 
-        }
+        };
         this.onNameChange = this.onNameChange.bind(this);
         Addresses.forEach(function(address) {
             saveToLocalStorage()
@@ -41,16 +42,18 @@ class Address extends Component {
         const that = this;
         fetch('./address.json').then(function(data) {
             const addresses = data.json();
-            console.log(addresses);
             return addresses;
         }).then(function (data) {
             console.log(JSON.stringify(data, null, 4));
             that.addresses = data;
-            //that.setLocalStorage();
+            that.addresses.forEach(function(element)
+            {
+                saveToLocalStorageByName(0, element.lastName);
+            });
         }).catch(function (err) {
             logger.log(err);
         })
-    }
+    };
 
     onNameChange = (event) => {
         const address = Addresses[this.addressindex];
@@ -84,7 +87,6 @@ class Address extends Component {
 
 
     render() {
-        console.log("ADDRESS", this.state.address);
         return (
             <div className="App">
                 <AddressShow
