@@ -22,6 +22,23 @@ describe('Address Test Changer Suite', function () {
         }
     };
 
+    beforeEach(function() {
+        const localStorageMock = (function() {
+            let storage = {};
+            return {
+                getItem: function(key) {
+                    return storage[key];
+                },
+                setItem: function(key, value) {
+                    storage[key] = value.toString();
+                },
+                clear: function() {
+                    storage = {};
+                }
+            };
+        })();
+        Object.defineProperty(global, 'localStorage', {value: localStorageMock});
+    });
 
     it('renders and displays the default first name', () => {
         const wrapper = mount(<AddressChanger />);

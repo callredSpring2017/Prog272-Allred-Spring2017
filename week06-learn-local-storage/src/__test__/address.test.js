@@ -22,6 +22,24 @@ describe('Address Test Suite', function () {
         }
     };
 
+    beforeEach(function() {
+        const localStorageMock = (function() {
+            let storage = {};
+            return {
+                getItem: function(key) {
+                    return storage[key];
+                },
+                setItem: function(key, value) {
+                    storage[key] = value.toString();
+                },
+                clear: function() {
+                    storage = {};
+                }
+            };
+        })();
+        Object.defineProperty(global, 'localStorage', {value: localStorageMock});
+    });
+
     it('renders button Set Address click message: firstName', () => {
         const wrapper = mount(<Address />);
         const AddressSign = <p className="App-intro">firstName: Patty</p>;

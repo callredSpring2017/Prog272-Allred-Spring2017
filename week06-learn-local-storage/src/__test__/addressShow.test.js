@@ -24,13 +24,24 @@ describe('Address-Show Test Suite', function () {
             console.log("APP TEST:", ninep);
         }
     }
-/*
- const getIndex = function(wrapper, index, talkToMe) {
- if (!quiet || talkToMe) {
- const ninep = wrapper.find('div#addressShowRender').childAt(index).debug();
- console.log('NINEP:', ninep);
- }
- };*/
+
+    beforeEach(function() {
+        const localStorageMock = (function() {
+            let storage = {};
+            return {
+                getItem: function(key) {
+                    return storage[key];
+                },
+                setItem: function(key, value) {
+                    storage[key] = value.toString();
+                },
+                clear: function() {
+                    storage = {};
+                }
+            };
+        })();
+        Object.defineProperty(global, 'localStorage', {value: localStorageMock});
+    });
 
     it('renders and displays the default first name', () => {
         const wrapper = mount(<Address />);

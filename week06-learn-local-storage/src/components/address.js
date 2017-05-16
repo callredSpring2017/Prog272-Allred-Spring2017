@@ -4,29 +4,29 @@ import Addresses from './address-list';
 import AddressShow from './address-show';
 import logger from '../elf-logger';
 import 'whatwg-fetch';
-import {
+/*import {
     saveToLocalStorage,
     saveToLocalStorageByName,
     // eslint-disable-next-line
     clearLocalStorage,
     // eslint-disable-next-line
     getLocalStorage
-} from '../assets/elf-local-storage'
+} from '../assets/elf-local-storage'*/
 
 class Address extends Component {
     constructor() {
         super();
         this.addressindex = 0;
-        this.loadAddresses();
         this.state = {
 
             address: Addresses[this.addressindex ]
 
         };
         this.onNameChange = this.onNameChange.bind(this);
-        Addresses.forEach(function(address) {
+        this.loadAddresses();
+/*        Addresses.forEach(function(address) {
             saveToLocalStorage()
-        });
+        });*/
     }
 
 
@@ -39,18 +39,32 @@ class Address extends Component {
     };
 
     loadAddresses = () => {
+
+        var PadNumber = function(numberToPad, width, padValue){
+
+            padValue = padValue|| 0;
+            numberToPad += '';
+            if (numberToPad.length >= width){
+                return numberToPad
+            } else {
+                return new Array(width-numberToPad.length + 1).join(padValue) + numberToPad;
+            }
+        }
         const that = this;
         fetch('./address.json').then(function(data) {
             const addresses = data.json();
             return addresses;
         }).then(function (data) {
-            console.log(JSON.stringify(data, null, 4));
+            //console.log(JSON.stringify(data, null, 4));
             that.addresses = data;
-            that.addresses.forEach(function(element)
+            data.forEach(function(address, index)
             {
-                saveToLocalStorageByName(0, element.lastName);
+                const addressString = JSON.stringify(address);
+                console.log(addressString);
+                localStorage.setItem('elf' + PadNumber(index,4,0), addressString)
+                //saveToLocalStorage();
             });
-        }).catch(function (err) {
+        }).catch(function(err) {
             logger.log(err);
         })
     };
