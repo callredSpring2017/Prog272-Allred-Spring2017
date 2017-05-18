@@ -1,7 +1,3 @@
-/**
- * Created by charlie on 4/17/17.
- */
-
 import getData from './mock-data';
 
 'use strict';

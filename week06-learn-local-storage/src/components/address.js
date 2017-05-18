@@ -2,16 +2,11 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
 import AddressShow from './address-show';
-import logger from '../elf-logger';
+import DataLoader from '../assets/DataLoader';
 import 'whatwg-fetch';
-/*import {
-    saveToLocalStorage,
-    saveToLocalStorageByName,
-    // eslint-disable-next-line
-    clearLocalStorage,
-    // eslint-disable-next-line
-    getLocalStorage
-} from '../assets/elf-local-storage'*/
+//eslint-disable-next-line
+import {getByIndex} from '../assets/elf-local-storage'
+const dataLoader = new DataLoader();
 
 class Address extends Component {
     constructor() {
@@ -23,10 +18,14 @@ class Address extends Component {
 
         };
         this.onNameChange = this.onNameChange.bind(this);
-        this.loadAddresses();
-/*        Addresses.forEach(function(address) {
-            saveToLocalStorage()
-        });*/
+
+        const that = this;
+        dataLoader.loadAddresses(function(addressCount) {
+            if (!addressCount) {
+                throw new Error('Cannot get address count in address.js');
+            }
+            that.addressCount = addressCount;
+        });
     }
 
 
@@ -38,7 +37,7 @@ class Address extends Component {
         })
     };
 
-    loadAddresses = () => {
+/*    loadAddresses = () => {
 
         var PadNumber = function(numberToPad, width, padValue){
 
@@ -67,7 +66,7 @@ class Address extends Component {
         }).catch(function(err) {
             logger.log(err);
         })
-    };
+    };*/
 
     onNameChange = (event) => {
         const address = Addresses[this.addressindex];

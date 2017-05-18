@@ -1,3 +1,4 @@
+
 /**
  * Created by charlie on 5/7/17.
  *
@@ -30,9 +31,30 @@ export default class ElfDebugEnzyme {
         console.log(this.callerName + value);
     }
 
+    getAll(wrapper, showMe) {
+        if (this.showData || showMe) {
+            const paragraphData = wrapper.debug();
+            this.display(paragraphData);
+        }
+    }
+
+    getElement(wrapper, element, showMe) {
+        if (this.showData || showMe) {
+            const paragraphData = wrapper.find(element).debug();
+            this.display(paragraphData);
+        }
+    }
+
     getFirst(wrapper, element, showMe) {
         if (this.showData || showMe) {
             const paragraphData = wrapper.find(element).first().debug();
+            this.display(paragraphData);
+        }
+    }
+
+    getIndex(wrapper, element, index, showMe) {
+        if (this.showData || showMe) {
+            var paragraphData = wrapper.find(element).childAt(index).debug();
             this.display(paragraphData);
         }
     }
@@ -43,19 +65,5 @@ export default class ElfDebugEnzyme {
             this.display(this.callerName + paragraphData);
         }
 
-    }
-
-    getAll(wrapper, element, showMe) {
-        if (this.showData || showMe) {
-            const paragraphData = wrapper.find(element).debug();
-            this.display(paragraphData);
-        }
-    }
-
-    getIndex(wrapper, element, index, showMe) {
-        if (this.showData || showMe) {
-            var paragraphData = wrapper.find(element).childAt(index).debug();
-            this.display(paragraphData);
-        }
     }
 }

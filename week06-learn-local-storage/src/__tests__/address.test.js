@@ -1,13 +1,10 @@
-/**
- * Created by bcuser on 4/19/17.
- */
 import React from 'react';
 import {mount} from 'enzyme';
 import Address from '../components/address';
 import Addresses from '../components/address-list';
 import '../css/index.css';
 import ElfTestDebug from '../elftestdebug';
-
+jest.mock('whatwg-fetch');
 const ElfTestDebugger = new ElfTestDebug(false);
 const address = Addresses[0];
 

@@ -4,7 +4,7 @@
 
 const getData = (url) => {
     switch (url) {
-        case '/getJson':
+        case './address.json':
             return [{
                 "firstName": "Lamar",
                 "lastName": "Alexander",
