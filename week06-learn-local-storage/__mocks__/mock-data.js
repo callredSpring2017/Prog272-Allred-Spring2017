@@ -41,7 +41,6 @@ const getData = (url) => {
                     "email": "",
                     "contact": "https://www.kaine.senate.gov/contact"
                 }];
-
         default:
             return [];
     }

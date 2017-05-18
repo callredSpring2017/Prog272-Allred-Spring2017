@@ -9,7 +9,7 @@ import ElfTestDebug from '../elftestdebug';
 const ElfTestDebugger = new ElfTestDebug(false);
 
 describe('Address-Show Test Suite', function () {
-    var quiet = false;
+    var quiet = true;
 
     function getFirst(wrapper) {
         const ninep = wrapper.find('p').first().debug();

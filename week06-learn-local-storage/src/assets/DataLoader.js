@@ -38,11 +38,11 @@ export default class DataLoader {
             logger.log('Loading data');
             fetch('./address.json').then(function(data) {
                 const addresses = data.json();
-                console.log(addresses);
+                //console.log(addresses);
                 return addresses;
             }).then(function(data) {
                 logger.log(JSON.stringify(data, null, 4));
-                console.log(that);
+                //console.log(that);
                 that.setLocalStorage(data);
                 callback(data.length);
             }).catch(function (err) {
