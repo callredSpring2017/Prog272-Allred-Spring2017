@@ -53,9 +53,8 @@ class Address extends Component {
             data.forEach(function(address, index)
             {
                 const addressString = JSON.stringify(address);
-                console.log(addressString);
+                //console.log(addressString);
                 localStorage.setItem('elf' + PadNumber(index,4,0), addressString)
-                //saveToLocalStorage();
             });
         }).catch(function(err) {
             logger.log(err);
