@@ -1,18 +1,34 @@
-/**
- * Created by bcuser on 4/19/17.
- */
 import React from 'react';
 import {mount} from 'enzyme';
 import '../css/index.css';
-import Addresses from '../components/address-list';
+import Addresses from '../components/address-list'
 import AddressChanger from '../components/AddressChanger';
 import ElfTestDebug from '../elftestdebug';
 
 const ElfTestDebugger = new ElfTestDebug(true);
 
-describe('Address Test Changer Suite', function() {
+describe('Address Test Changer Suite', function () {
 
+    var quiet = true;
     let address = Addresses[0];
+
+    beforeEach(function() {
+        const localStorageMock = (function() {
+            let storage = {};
+            return {
+                getItem: function(key) {
+                    return storage[key];
+                },
+                setItem: function(key, value) {
+                    storage[key] = value.toString();
+                },
+                clear: function() {
+                    storage = {};
+                }
+            };
+        })();
+        Object.defineProperty(global, 'localStorage', {value: localStorageMock});
+    });
 
     it('renders and displays the default first name', () => {
         const wrapper = mount(<AddressChanger />);

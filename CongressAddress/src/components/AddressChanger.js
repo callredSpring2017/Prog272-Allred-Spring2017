@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
 import AddressEdit from './AddressEdit';
-import Address from './address';
+import Address from './Address';
 
 class AddressChanger extends Address {
     onNameChange(event)  {

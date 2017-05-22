@@ -1,65 +1,31 @@
 import React, {Component} from 'react';
 import '../css/App.css';
 import Addresses from './address-list';
-import AddressShow from './address-show';
-import logger from '../assets/logger';
+import AddressShow from './Address-Show';
+import DataLoader from '../assets/DataLoader';
 import 'whatwg-fetch';
-/*import {
-    // eslint-disable-next-line
-    saveToLocalStorage,
-    // eslint-disable-next-line
-    saveToLocalStorageByName,
-    // eslint-disable-next-line
-    clearLocalStorage,
-    // eslint-disable-next-line
-    getLocalStorage
-} from '../assets/elf-local-storage'*/
+
+const dataLoader = new DataLoader();
 
 class Address extends Component {
     constructor() {
         super();
         this.addressindex = 0;
         this.state = {
-            address: Addresses[this.addressindex]
-        }
+
+            address: Addresses[this.addressindex ]
+
+        };
         this.onNameChange = this.onNameChange.bind(this);
-        this.loadAddresses();
-/*
-        Addresses.forEach(function(address) {
-            saveToLocalStorage()
-        });
-*/
-    }
 
-    loadAddresses = () => {
-
-        var PadNumber = function(numberToPad, width, padValue){
-
-            padValue = padValue|| 0;
-            numberToPad += '';
-            if (numberToPad.length >= width){
-                return numberToPad
-            } else {
-                return new Array(width-numberToPad.length + 1).join(padValue) + numberToPad;
-            }
-        }
         const that = this;
-        fetch('./address.json').then(function(data) {
-            const addresses = data.json();
-            return addresses;
-        }).then(function (data) {
-            //console.log(JSON.stringify(data, null, 4));
-            that.addresses = data;
-            data.forEach(function(address, index)
-            {
-                const addressString = JSON.stringify(address);
-                //console.log(addressString);
-                localStorage.setItem('elf' + PadNumber(index,4,0), addressString)
-            });
-        }).catch(function(err) {
-            logger.log(err);
-        })
-    };
+        dataLoader.loadAddresses(function(addressCount) {
+            if (!addressCount) {
+                throw new Error('Cannot get address count in Address.js');
+            }
+            that.addressCount = addressCount;
+        });
+    }
 
     setAddress = () => {
         this.addressindex++;
@@ -70,7 +36,6 @@ class Address extends Component {
             address: Addresses[this.addressindex]
         })
     };
-
 
     getAddress = () => {
         this.addressindex--;
@@ -129,7 +94,6 @@ class Address extends Component {
     };
 
     render() {
-        console.log("ADDRESS", this.state.address);
         return (
             <div className="App">
                 <AddressShow

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Address from '../components/SmallNumbers';
-import ElfHeader from '../components/elfheader';
+import ElfHeader from '../components/ElfHeader';
 import {shallow} from 'enzyme';
 
 describe('Header Suite', function() {

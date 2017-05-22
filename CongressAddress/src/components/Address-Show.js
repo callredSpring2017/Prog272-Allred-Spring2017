@@ -8,9 +8,6 @@ class AddressShow extends Component {
         super(props);
         this.quiet = true;
         this.log(this.props.address);
-        // this.state = {
-        //     address: this.props.address
-        // }
         this.log(props);
     }
 
@@ -23,7 +20,6 @@ class AddressShow extends Component {
         }
 
     }
-
 
     setAddress = () => {
         this.setState({})
