@@ -1,6 +1,3 @@
-/**
- * Created by bcuser on 4/24/17.
- */
 import React, {Component} from 'react';
 import '../css/App.css';
 
@@ -43,7 +40,7 @@ class AddressShow extends Component {
                 <p className="App-intro">streetAddress: {this.props.address.streetAddress}</p>
                 <p className="App-intro">city: {this.props.address.city}</p>
                 <p className="App-intro">state: {this.props.address.state}</p>
-                <p className="App-intro">zipCode: {this.props.address.zipCode}</p>
+                <p className="App-intro">zipCode: {this.props.zipCode}</p>
                 <button className='elf' id='setAddress' onClick={this.props.setAddress}>Set Address</button>
             </div>
         );

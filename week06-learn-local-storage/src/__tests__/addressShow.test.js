@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {mount} from 'enzyme';
-import Address from "../components/address";
+import Address from "../components/Address";
 import ElfTestDebug from '../elftestdebug';
 
 const ElfTestDebugger = new ElfTestDebug(false);
@@ -41,7 +41,6 @@ describe('Address-Show Test Suite', function () {
             };
         })();
         Object.defineProperty(global, 'localStorage', {value: localStorageMock});
-
     });
 
     it('renders and displays the default first name', () => {

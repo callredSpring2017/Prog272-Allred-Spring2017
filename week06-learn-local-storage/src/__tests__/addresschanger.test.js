@@ -1,6 +1,3 @@
-/**
- * Created by bcuser on 4/19/17.
- */
 import React from 'react';
 import {mount} from 'enzyme';
 import '../css/index.css';
@@ -38,7 +35,6 @@ describe('Address Test Changer Suite', function () {
             };
         })();
         Object.defineProperty(global, 'localStorage', {value: localStorageMock});
-
     });
 
     it('renders and displays the default first name', () => {

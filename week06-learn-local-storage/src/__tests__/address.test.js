@@ -1,9 +1,10 @@
 import React from 'react';
 import {mount} from 'enzyme';
-import Address from '../components/address';
+import Address from '../components/Address';
 import Addresses from '../components/address-list';
 import '../css/index.css';
 import ElfTestDebug from '../elftestdebug';
+import DataMaven from "../components/DataMaven";
 jest.mock('whatwg-fetch');
 const ElfTestDebugger = new ElfTestDebug(false);
 const address = Addresses[0];
@@ -38,42 +39,42 @@ describe('Address Test Suite', function () {
     });
 
     it('renders button Set Address click message: firstName', () => {
-        const wrapper = mount(<Address />);
-        const AddressSign = <p className="App-intro">firstName: Patty</p>;
+        const wrapper = mount(<DataMaven />);
+        const AddressSign = <p className="App-intro">firstName: Lamar</p>;
         wrapper.find('button#getAddress').simulate('click');
         expect(wrapper.contains(AddressSign)).toEqual(true);
     });
 
     it('renders button Set Address click message: lastName', () => {
-        const wrapper = mount(<Address />);
-        const AddressSign = <p className="App-intro">lastName: Murray</p>;
+        const wrapper = mount(<DataMaven />);
+        const AddressSign = <p className="App-intro">lastName: Alexander</p>;
         wrapper.find('button#getAddress').simulate('click');
         expect(wrapper.contains(AddressSign)).toEqual(true);
     });
     it('renders button Set Address click message: streetAddress', () => {
-        const wrapper = mount(<Address />);
-        const AddressSign = <p className="App-intro">streetAddress: 915 2nd Ave #2988</p>;
+        const wrapper = mount(<DataMaven/>);
+        const AddressSign = <p className="App-intro">455 Dirksen Senate Office Building</p>;
         wrapper.find('button#getAddress').simulate('click');
         expect(wrapper.contains(AddressSign)).toEqual(true);
     });
 
     it('renders button Set Address click message: city', () => {
-        const wrapper = mount(<Address />);
-        const AddressSign = <p className="App-intro">city: Seattle</p>;
+        const wrapper = mount(<DataMaven />);
+        const AddressSign = <p className="App-intro">city: Washington DC</p>;
         wrapper.find('button#getAddress').simulate('click');
         expect(wrapper.contains(AddressSign)).toEqual(true);
     });
 
     it('renders button Set Address click message: state', () => {
-        const wrapper = mount(<Address />);
-        const AddressSign = <p className="App-intro">state: Washington</p>;
+        const wrapper = mount(<DataMaven />);
+        const AddressSign = <p className="App-intro">state: TN</p>;
         wrapper.find('button#getAddress').simulate('click');
         expect(wrapper.contains(AddressSign)).toEqual(true);
     });
 
     it('renders button Set Address click message: zipCode', () => {
-        const wrapper = mount(<Address />);
-        const AddressSign = <p className="App-intro">zipCode: 98174</p>;
+        const wrapper = mount(<DataMaven />);
+        const AddressSign = <p className="App-intro">zipCode: 20510</p>;
         wrapper.find('button#getAddress').simulate('click');
         expect(wrapper.contains(AddressSign)).toEqual(true);
     });

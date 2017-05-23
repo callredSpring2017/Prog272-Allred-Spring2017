@@ -1,8 +1,3 @@
-
-/**
- * Created by bcuser on 5/10/17.
- */
-
 import Logger from '../elf-logger';
 const logger = new Logger('data-loader', 'yellow', 'green', '18px');
 import {saveByIndex} from './elf-local-storage';
