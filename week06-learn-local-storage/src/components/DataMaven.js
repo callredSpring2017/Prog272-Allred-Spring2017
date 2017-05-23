@@ -37,7 +37,8 @@ class DataMaven extends Component {
     }
 
 
-    setAddress = () => {
+    setAddress = (event) => {
+        console.log(event.target.id);
         this.addressindex++;
         if(this.addressindex > 4){
             this.addressindex = 4;

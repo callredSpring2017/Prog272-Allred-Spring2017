@@ -42,6 +42,7 @@ class AddressShow extends Component {
                 <p className="App-intro">state: {this.props.address.state}</p>
                 <p className="App-intro">zipCode: {this.props.zipCode}</p>
                 <button className='elf' id='setAddress' onClick={this.props.setAddress}>Set Address</button>
+                <button className='elf' id='prevAddress' onClick={this.props.setAddress}>Set Address</button>
             </div>
         );
     }
