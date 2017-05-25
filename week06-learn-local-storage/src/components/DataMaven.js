@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {
-    BrowserRouter as Router,
     Route
 } from 'react-router-dom';
 import Address from './Address';
@@ -81,7 +80,6 @@ class DataMaven extends Component {
         return (
             <div>
                 <ElfHeader />
-                <Router>
                     <div>
                         <ElfMenu />
                         <Route exact path="/" render={(props) => (
@@ -102,7 +100,6 @@ class DataMaven extends Component {
                         )}/>
                         <Route path="/small" component={SmallNumbers}/>
                     </div>
-                </Router>
             </div>
 
         );
