@@ -48,10 +48,10 @@ class AddressShow extends Component {
                 <p className='App-intro'>state: {this.props.address.state}</p>
                 <p className='App-intro'>zipCode: {this.props.address.zipCode}</p>
                 <p className='App-intro'>website: {this.props.address.website}</p>
-                <button className='elf' id='getFirstAddress' onClick={this.props.getFirstAddress}>First</button>
-                <button className='elf' id='getAddress' onClick={this.props.getAddress}>Get Prev</button>
+                <button className='elf' id='getFirstAddress' onClick={this.props.setAddress}>First</button>
+                <button className='elf' id='getAddress' onClick={this.props.setAddress}>Get Prev</button>
                 <button className='elf' id='setAddress' onClick={this.props.setAddress}>Get Next</button>
-                <button className='elf' id='setLastAddress' onClick={this.props.setLastAddress}>Last</button>
+                <button className='elf' id='setLastAddress' onClick={this.props.setAddress}>Last</button>
             </div>
         );
     }

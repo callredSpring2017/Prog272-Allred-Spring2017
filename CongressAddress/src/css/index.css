@@ -31,8 +31,9 @@ input{
 }
 
 button{
-
-    marging: 10px;
+    display:block;
+    margin:auto;
+    width: 100px;
     padding: 5px;
     background-color: darkorange;
 }
