@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DataMaven from '../components/DataMaven';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import ElfDebugEnzyme from '../elftestdebug';
-const elfDebug = new ElfDebugEnzyme(true, 'DataMaven.test.js');
+const elfDebug = new ElfDebugEnzyme(false, 'DataMaven.test.js');
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('DataMaven Suite', function() {
 
@@ -28,32 +29,32 @@ describe('DataMaven Suite', function() {
 
     it('renders DataMaven component without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<DataMaven />, div);
+        ReactDOM.render(<Router><DataMaven /></Router>, div);
     });
 
     it('renders and displays a Router', () => {
-        const wrapper = shallow(<DataMaven  />);
+        const wrapper = mount(<Router><DataMaven /></Router>);
         elfDebug.getAll(wrapper);
         var router = wrapper.find('BrowserRouter');
         expect(router.length).toEqual(1);
     });
 
     it('renders and displays at least one Route', () => {
-        const wrapper = shallow(<DataMaven  />);
+        const wrapper = mount(<Router><DataMaven /></Router>);
         elfDebug.getAll(wrapper);
         var router = wrapper.find('Route');
         expect(router.length).toBeGreaterThan(0);
     });
 
     it('renders and displays the ElfHeader', () => {
-        const wrapper = shallow(<DataMaven  />);
+        const wrapper = mount(<Router><DataMaven /></Router>);
         elfDebug.getAll(wrapper, false);
         var router = wrapper.find('ElfHeader');
         expect(router.length).toEqual(1);
     });
 
     it('renders and displays the ElfMenu', () => {
-        const wrapper = shallow(<DataMaven  />);
+        const wrapper = mount(<Router><DataMaven /></Router>);
         elfDebug.getAll(wrapper, false);
         var router = wrapper.find('ElfMenu');
         expect(router.length).toEqual(1);

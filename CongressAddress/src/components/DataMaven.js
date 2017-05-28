@@ -90,7 +90,9 @@ class DataMaven extends Component {
         this.setState({
             address: address
         })
-    };    render() {
+    };
+
+    render() {
         return (
             <div>
             <ElfHeader />
