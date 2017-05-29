@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DataRouter from '../components/DataMaven';
+import DataMaven from '../components/DataMaven';
 import ElfMenu from '../components/ElfMenu';
 import {shallow} from 'enzyme';
-import {Navbar} from 'react-bootstrap';
+import {mount} from 'enzyme'
+import {MemoryRouter} from 'react-router';
 
 describe('ElfMenu Suite', function() {
 
@@ -27,8 +28,8 @@ describe('ElfMenu Suite', function() {
 
     it('renders the ElfMenu component without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<DataRouter><ElfMenu /></DataRouter>, div);
-        expect();
+        const wrapper = mount(<MemoryRouter><DataMaven /></MemoryRouter>);
+        ReactDOM.render(<MemoryRouter><DataMaven /></MemoryRouter>, div);
     });
 
     it('Shows there is no BrowserRouter in ElfMenu', () => {
