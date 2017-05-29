@@ -31,9 +31,14 @@ input{
 }
 
 button{
+
     display:block;
     margin:auto;
     width: 100px;
     padding: 5px;
     background-color: darkorange;
+}
+
+.addressEditRender{
+    margin: auto;
 }

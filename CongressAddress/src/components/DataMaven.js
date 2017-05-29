@@ -34,7 +34,7 @@ class DataMaven extends Component {
 
 
     setAddress = (event) => {
-        console.log(event.target.id);
+        //console.log(event.target.id);
         switch (event.target.id){
             case 'getFirstAddress':
                 this.addressindex = 0;
@@ -90,9 +90,11 @@ class DataMaven extends Component {
         this.setState({
             address: address
         })
-    };    render() {
+    };
+
+    render() {
         return (
-            <div>
+            <div className="container">
             <ElfHeader />
                 <div>
                     <ElfMenu />
@@ -112,7 +114,7 @@ class DataMaven extends Component {
                                      onNameChange={this.onNameChange}
                         />
                     )}/>
-                    <Route path="/small" component={SmallNumbers}/>
+                    <Route path="/small" component={SmallNumbers} />
                 </div>
             </div>
 

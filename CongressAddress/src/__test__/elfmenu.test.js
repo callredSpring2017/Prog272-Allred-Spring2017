@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import DataRouter from '../components/DataMaven';
 import ElfMenu from '../components/ElfMenu';
 import {shallow} from 'enzyme';
+import {Navbar} from 'react-bootstrap';
 
 describe('ElfMenu Suite', function() {
 
