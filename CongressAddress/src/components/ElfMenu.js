@@ -16,7 +16,7 @@ class ElfMenu extends Component {
             <Navbar inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <LinkContainer to='/'><a><img src="../images/logo.svg" className="img-fluid" alt="Responsive Logo" /></a></LinkContainer>
+                        <LinkContainer to='/'><a><img src="http://localhost:3000/CAhome.png" className="img-thumbnail" alt="Responsive Logo" /></a></LinkContainer>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
