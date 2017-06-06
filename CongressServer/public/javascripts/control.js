@@ -1,27 +1,28 @@
 $(document).ready(function() {
-    'use strict';
-    var insertUrl = '/insertValidCollection';
+    "use strict";
+    var insertUrl = "/insertValidCollection";
 
     function insertCollection() {
         $.get(insertUrl, function (result) {
-            $('#display').html(JSON.stringify(result, null, 4));
-            console.log(JSON.stringify(result, null, 4));
-        })
+    //language=JQuery-CSS
+    $('#display').html(JSON.stringify(result, null, 4));
+    console.log(JSON.stringify(result, null, 4));
+})
             .done(function () {
-                console.log('second success');
+                console.log("second success");
             })
-            .fail(function () {
-                alert('error');
+            .fail(function (error) {
+                alert(JSON.stringify(error, null, 4));
             })
             .always(function () {
-                console.log('finished');
+                console.log("finished");
             });
     }
 
     $('#insertValidData').click(insertCollection);
 
     $('#getAll').click(function () {
-        $.getJSON('/all-data', function (result) {
+        $.getJSON("/all-data", function (result) {
             $('#display').html(JSON.stringify(result, null, 4));
         })
     });
