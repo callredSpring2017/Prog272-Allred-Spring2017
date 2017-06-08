@@ -7,6 +7,7 @@ var connect = require('./connect');
 router.get("/", function (req, res, next) {
     "use strict";
     res.render("index", {title: "CongressServer-Allred"});
+    //res.loadFile('index.html');
 });
 
 function checkConnection() {
