@@ -26,4 +26,21 @@ $(document).ready(function() {
             $('#display').html(JSON.stringify(result, null, 4));
         })
     });
+
+    function emptyCollection() {
+        $.getJSON('/emptyCollection', function(result) {
+            $('#display').html(JSON.stringify(result, null, 4));
+        })
+            .done(function() {
+                console.log('second success');
+            })
+            .fail(function() {
+                alert(JSON.stringify(a.responseJSON, null, 4));
+            })
+            .always(function() {
+                console.log('finished');
+            });
+    }
+
+    $('#emptyCollection').click(emptyCollection);
 });
