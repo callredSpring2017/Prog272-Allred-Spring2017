@@ -1,0 +1,14 @@
+{
+    "preset": "google",
+    "validateIndentation": 4,
+    "maximumLineLength": null,
+    "excludeFiles": [
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/address.json",
+        "**/config/**",
+        "**/scripts/**",
+        "**/address-list.js",
+        "**/mock-user-info.js"
+    ]
+}

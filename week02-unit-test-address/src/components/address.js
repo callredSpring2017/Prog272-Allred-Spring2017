@@ -1,51 +1,97 @@
 /**
- * Created by bcuser on 4/22/17.
+ * Created by bcuser on 4/24/17.
  */
 import React, {Component} from 'react';
-
-import Addresses from './addresslist';
+import '../css/App.css';
+import Addresses from './address-list';
+import AddressShow from './address-show';
+<<<<<<< HEAD
+import AddressEdit from './AddressEdit';
+=======
+>>>>>>> 006390bdca5a41ed8561ac8d5c51392b17a55bd3
 
 class Address extends Component {
     constructor() {
         super();
-
-        const AddressList = Addresses[0];
+        this.addressindex = 0;
         this.state = {
-            firstName: AddressList.firstName,
-            lastName: AddressList.lastName,
-            streetAddress: AddressList.streetAddress,
-            city: AddressList.city,
-            State: AddressList.State,
-            zipCode: AddressList.zipCode
+            // firstName: this.props.address[index].firstName,
+            // lastName: this.props.address[index].lastName,
+            // streetAddress: this.props.address[index].streetAddress,
+            // city: this.props.address[index].city,
+            // state: this.props.address[index].state,
+            // zipCode: this.props.address[index].zipCode
+            address: Addresses[this.addressindex ]
         }
     }
 
+
     setAddress = () => {
-        const AddressList = Addresses[1];
+        this.addressindex = 1;
         this.setState({
-            firstName: AddressList.firstName,
-            lastName: AddressList.lastName,
-            streetAddress: AddressList.streetAddress,
-            city: AddressList.city,
-            State: AddressList.State,
-            zipCode: AddressList.zipCode
+<<<<<<< HEAD
+=======
+            /*            firstName: 'Patty',
+             lastName: 'Murray',
+             streetAddress: '915 2nd Ave #2988',
+             city: 'Seattle',
+             state: 'Washington',
+             zipCode: '98174'*/
+>>>>>>> 006390bdca5a41ed8561ac8d5c51392b17a55bd3
+            address: Addresses[this.addressindex]
         })
     };
 
+<<<<<<< HEAD
+
+    onNameChange = (event) => {
+        const address = Addresses[this.addressindex];
+        switch (event.target.id) {
+            case 'elfFirstName':
+                address.firstName = event.target.value;
+                break;
+            case 'elfLastName':
+                address.lastName = event.target.value;
+                break;
+            case 'elfStreetName':
+                address.streetAddress = event.target.value;
+                break;
+            case 'elfCity':
+                address.city = event.target.value;
+                break;
+            case 'elfState':
+                address.state = event.target.value;
+                break;
+            case 'elfZipCode':
+                address.zipCode = event.target.value;
+                break;
+            default:
+                throw new Error('OH NO BAD CASE in Address onNameChange');
+        }
+        this.setState({
+            address: address
+        })
+    };
+
+=======
+>>>>>>> 006390bdca5a41ed8561ac8d5c51392b17a55bd3
     render() {
+        console.log("ADDRESS", this.state.address);
         return (
             <div className="App">
-                <p className="App-intro">firstName: {this.state.firstName}</p>
-                <p className="App-intro">lastName: {this.state.lastName}</p>
-                <p className="App-intro">streetAddress: {this.state.streetAddress}</p>
-                <p className="App-intro">city: {this.state.city}</p>
-                <p className="App-intro">state: {this.state.State}</p>
-                <p className="App-intro">zipCode: {this.state.zipCode}</p>
-                <button className='elf' id='address' onClick={this.setAddress}>Set Address</button>
+                <AddressShow
+                    address={this.state.address}
+                    setAddress={this.setAddress}
+                />
+                <AddressEdit
+                    address={this.state.address}
+                    setAddress={this.setAddress}
+                />
+
             </div>
         );
     }
-}
 
+}
 
 export default Address;
