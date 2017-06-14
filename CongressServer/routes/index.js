@@ -13,7 +13,7 @@ router.get("/", function (req, res, next) {
 function checkConnection() {
     "use strict";
     if (!connect.connected) {
-        connect.doConnection('mlab');
+        connect.doConnection('custom');
     }
 }
 

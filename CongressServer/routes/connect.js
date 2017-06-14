@@ -11,7 +11,7 @@ const connect = {
     simpleConnect: function() {
         'use strict';
         console.log('Connecting with simple.');
-        const url = 'mongodb://callred:Pa$$w0rd@ds062889.mlab.com:62889/prog219db';
+        const url = 'mongodb://192.168.2.18:27017/test -u charlie -p foobar';
         console.log(url);
         connect.connected = true;
         mongoose.connect(url);
@@ -22,15 +22,14 @@ const connect = {
             console.log('Opened connection to mongo');
         });
     },
-
     custom: function() {
         'use strict';
         console.log('Connecting with simple.');
         //const url = 'mongodb://127.0.0.1:27017/test';
-        const userName = 'callred';
-        const password = 'Pa$$w0rd';
-        const siteAndPort = 'ds062889.mlab.com:62889';
-        const databaseName = 'prog219db';
+        const userName = 'charlie';
+        const password = 'foobar';
+        const siteAndPort = '192.168.254.36:27017';
+        const databaseName = 'test';
         const url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
         console.log(url);
         connect.connected = true;
