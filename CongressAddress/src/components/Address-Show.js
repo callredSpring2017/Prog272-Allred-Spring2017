@@ -20,7 +20,7 @@ class AddressShow extends Component {
         }
 
     }
-
+/*
     setAddress = () => {
         this.setState({})
     };
@@ -35,7 +35,7 @@ class AddressShow extends Component {
 
     setLastAddress = () => {
         this.setState({})
-    };
+    };*/
 
     render() {
         this.log('render called');
