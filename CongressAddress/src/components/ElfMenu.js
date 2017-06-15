@@ -7,7 +7,7 @@ import {
 */
 // eslint-disable-next-line
 import { Navbar, Nav, MenuItem, NavDropdown, NavItem   } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 
 class ElfMenu extends Component {
 
@@ -20,12 +20,12 @@ class ElfMenu extends Component {
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
-                    <LinkContainer to='/'><NavItem>Address Show</NavItem></LinkContainer>
-                    <LinkContainer to='/edit'><NavItem>Address Edit</NavItem></LinkContainer>
-                    <LinkContainer to='/small'><NavItem>Small Numbers</NavItem></LinkContainer>
+                    <IndexLinkContainer to='/'><NavItem>Address Show</NavItem></IndexLinkContainer>
+                    <IndexLinkContainer to='/edit'><NavItem>Address Edit</NavItem></IndexLinkContainer>
+                    <IndexLinkContainer to='/small'><NavItem>Small Numbers</NavItem></IndexLinkContainer>
                     <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                        <LinkContainer to='/edit'><NavItem>Address Edit</NavItem></LinkContainer>
-                        <LinkContainer to='/small'><NavItem>Small Numbers</NavItem></LinkContainer>
+                        <IndexLinkContainer to='/edit'><NavItem>Address Edit</NavItem></IndexLinkContainer>
+                        <IndexLinkContainer to='/small'><NavItem>Small Numbers</NavItem></IndexLinkContainer>
                         <MenuItem divider />
                     </NavDropdown>
                 </Nav>
