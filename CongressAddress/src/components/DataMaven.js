@@ -74,7 +74,7 @@ class DataMaven extends Component {
                 });
                 break;
             case 'getAddress':
-                if (this.addressindex < 0) {
+                if (this.addressindex > 0) {
                     this.addressindex--;
                     const address = getByIndex(this.addressindex);
                     this.setState({
