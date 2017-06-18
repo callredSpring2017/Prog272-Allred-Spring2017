@@ -126,3 +126,5 @@ dbAddressSave() {
 ```
 
 ## Summary
+
+That's a nice solid 96 average for the course, which earns you an A. Great work!
